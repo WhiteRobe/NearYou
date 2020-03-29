@@ -1,0 +1,1002 @@
+<!--Created by Dai @Xidian On 2017/6/2-->
+<html>
+	<head>
+		<title>消息类型</title>
+		<style type="text/css">
+			table {
+				width:100%;
+				height:40px;
+				border:2px solid black;
+				border-collapse:collapse;
+			}
+			td {
+				border:1px solid gray;
+				border-collapse:collapse;
+				font-size:18px;
+				text-align:left;
+			}
+			.float {
+				position:fixed;
+				right:20px;
+				top:85%;
+			}
+		</style>
+
+	</head>
+	<body>
+	<!--data目录-->
+	<a id="top">
+	<h1>>消息字格式</h1>
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>JSONobject<b></td>
+		</tr>
+		<tr>
+			<td width="15%">&nbsp&nbsp└MsgType</td>
+			<td width="15%"><a href="#msgtype">查看值域</a></td>
+			<td width="70%">&nbsp:&nbsp消息类型 - String</td>
+		</tr>
+		<tr>
+			<td  width="15%">&nbsp&nbsp└MsgId</td>
+			<td  width="15%"><a href="#msgid">查看方法</a></td>
+			<td  width="70%">&nbsp:&nbsp消息ID - String</td>
+		</tr>
+		<tr>
+			<td  width="30%" colspan="2">&nbsp&nbsp└UID</td>
+			<td  width="70%">&nbsp:&nbsp消息来源的ID - String</td>
+		</tr>
+		<tr>
+			<td  width="15%">&nbsp&nbsp└Data</td>
+			<td  width="15%"><a href="#data">查看值域</a></td>
+			<td  width="70%">&nbsp:&nbsp消息内容 - JSONobject</td>
+		</tr>
+	</table>
+	<!--消息id内容-->
+	<br>
+	<hr></hr>
+	<a id="msgtype">
+	<h1>消息类型(MsgType)</h1>
+	<table>
+		<tr>
+			<td width="100%" colspan="4"><b>MsgType<b>&nbsp&nbsp<a href="#top">返回上一级</a></td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.BEAT</td>
+			<td width="15%">实值:0</td>
+			<td width="15%"><a href="#">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp心跳消息</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.LOGIN</td>
+			<td width="15%">实值:1</td>
+			<td width="15%"><a href="#data1">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp用户登陆请求</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.REGISTER</td>
+			<td width="15%">实值:2</td>
+			<td width="15%"><a href="#data2">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp用户注册请求</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.CLIENT_RES</td>
+			<td width="15%">实值:3</td>
+			<td width="15%"><a href="#data3">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp客户端回应</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.CLIENT_REQ</td>
+			<td width="15%">实值:4</td>
+			<td width="15%"><a href="#data4">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp客户端请求</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.SERVER_RES</td>
+			<td width="15%">实值:5</td>
+			<td width="15%"><a href="#data5">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp服务器回应</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.SERVER_REQ</td>
+			<td width="15%">实值:6</td>
+			<td width="15%"><a href="#data6">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp服务器请求</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.CLIENT_PUSH</td>
+			<td width="15%">实值:7</td>
+			<td width="15%"><a href="#data7">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp客户端通知</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.SERVER_PUSH</td>
+			<td width="15%">实值:8</td>
+			<td width="15%"><a href="#data8">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp服务器通知</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.EMPTY</td>
+			<td width="15%">实值:9</td>
+			<td width="15%"><a href="#data9">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp空包消息</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.ALTER_PROFILE</td>
+			<td width="15%">实值:10</td>
+			<td width="15%"><a href="#data10">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp更新个人资料</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.MESSAGE</td>
+			<td width="15%">实值:11</td>
+			<td width="15%"><a href="#data11">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp聊天数据</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.CLIENT_POST_MOMENTS</td>
+			<td width="15%">实值:12</td>
+			<td width="15%"><a href="#data12">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp客户端发布动态数据</td>
+		</tr>
+		<tr>
+			<td width="40%">&nbsp&nbsp└MsgType.CLIENT_POST_COMMENT</td>
+			<td width="15%">实值:13</td>
+			<td width="15%"><a href="#data13">查看data值</a></td>
+			<td width="30%">&nbsp:&nbsp客户端发布动态评论数据</td>
+		</tr>
+	</table>
+	
+	<!--消息id内容-->
+	<br><br>
+	<hr></hr>
+	<a id="msgid">
+	<h1>消息编号(MsgId)</h1>
+		获取方法:<pre>
+private String getMID(){
+    if(autoIncNum>65535){
+    	autoIncNum=0;
+    }
+    autoIncNum++;
+    return autoIncNum+"";
+}//0~65535
+	</pre>
+	<a href="#top">返回顶部</a>
+	<br>
+	<hr></hr>
+	<!--data内容-->
+	<a id="data">
+	<h1>消息数据(Data)</h1>
+	<a id="data1">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.LOGIN - 1<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Account</td>
+			<td width="40%">样值:"aopikachu" - String</td>
+			<td width="30%">&nbsp:&nbsp登录账号</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Password</td>
+			<td width="40%">样值:"mypw12345" - String</td>
+			<td width="30%">&nbsp:&nbsp登陆密码</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Longitude</td>
+			<td width="40%">样值:"xxxxx" - String</td>
+			<td width="30%">&nbsp:&nbsp登陆纬度</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Latitude</td>
+			<td width="40%">样值:"xxxxx" - String</td>
+			<td width="30%">&nbsp:&nbsp登陆经度</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Address</td>
+			<td width="40%">样值:"解放路825街道" - String</td>
+			<td width="30%">&nbsp:&nbsp登录地址</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Adcode</td>
+			<td width="40%">样值:"351200" - String</td>
+			<td width="30%">&nbsp:&nbsp登陆地区编码</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Valicode</td>
+			<td width="40%">样值:" " - String</td>
+			<td width="30%">&nbsp:&nbsp登陆验证码</td>
+		</tr>
+	</table>
+	
+	<br><a id="data2">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.REGISTER - 2<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Account</td>
+			<td width="40%">样值:"aopikachu" - String</td>
+			<td width="30%">&nbsp:&nbsp注册账号</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Password</td>
+			<td width="40%">样值:"mypw12345" - String</td>
+			<td width="30%">&nbsp:&nbsp注册密码</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Longitude</td>
+			<td width="40%">样值:"xxxxx" - String</td>
+			<td width="30%">&nbsp:&nbsp注册纬度</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Latitude</td>
+			<td width="40%">样值:"xxxxx" - String</td>
+			<td width="30%">&nbsp:&nbsp注册经度</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Address</td>
+			<td width="40%">样值:"西安长安区解放路825街道" - String</td>
+			<td width="30%">&nbsp:&nbsp注册地址</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Adcode</td>
+			<td width="40%">样值:"351200" - String</td>
+			<td width="30%">&nbsp:&nbsp注册地区编码</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Valicode</td>
+			<td width="40%">样值:" " - String</td>
+			<td width="30%">&nbsp:&nbsp注册验证码</td>
+		</tr>
+	</table>
+	
+	<br><a id="data3">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.CLIENT_RES - 3<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Class</td>
+			<td width="40%">样值:"<a href="#response">见下文<a>" - String</td>
+			<td width="30%">&nbsp:&nbsp客户端反馈类型</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└*Value</td>
+			<td width="40%">样值:"xxxxx" - String/JSONobject</td>
+			<td width="30%">&nbsp:&nbsp附加值</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Day</td>
+			<td width="40%">样值:"2017-08-16" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(天)</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Time</td>
+			<td width="40%">样值:"14:14:45" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(小时)</td>
+		</tr>
+	</table>
+	
+	<br><a id="data4">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.CLIENT_REQ - 4<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Class</td>
+			<td width="40%">样值:"<a href="#request">见下文<a>" - String</td>
+			<td width="30%">&nbsp:&nbsp客户端请求类型</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└*Value</td>
+			<td width="40%">样值:"xxxxx" - String/JSONobject</td>
+			<td width="30%">&nbsp:&nbsp附加值</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Day</td>
+			<td width="40%">样值:"2017-08-16" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(天)</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Time</td>
+			<td width="40%">样值:"14:14:45" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(小时)</td>
+		</tr>
+	</table>
+	
+	<br><a id="data5">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.SERVER_RES - 5<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Class</td>
+			<td width="40%">样值:"<a href="#response">见下文<a>" - String</td>
+			<td width="30%">&nbsp:&nbsp服务器反馈类型</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└*Value</td>
+			<td width="40%">样值:"xxxxx" - String/JSONobject</td>
+			<td width="30%">&nbsp:&nbsp附加值</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Day</td>
+			<td width="40%">样值:"2017-08-16" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(天)</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Time</td>
+			<td width="40%">样值:"14:14:45" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(小时)</td>
+		</tr>
+	</table>
+	
+	<br><a id="data6">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.SERVER_REQ - 6<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Class</td>
+			<td width="40%">样值:"<a href="#request">见下文<a>" - String</td>
+			<td width="30%">&nbsp:&nbsp服务器请求类型</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└*Value</td>
+			<td width="40%">样值:"xxxxx" - String/JSONobject</td>
+			<td width="30%">&nbsp:&nbsp附加值</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Day</td>
+			<td width="40%">样值:"2017-08-16" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(天)</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Time</td>
+			<td width="40%">样值:"14:14:45" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(小时)</td>
+		</tr>
+	</table>
+	
+	<br><a id="data7">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.CLIENT_PUSH - 7<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Class</td>
+			<td width="40%">样值:"<a href="#push">见下文<a>" - String</td>
+			<td width="30%">&nbsp:&nbspMessage推送消息的类</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└*Value</td>
+			<td width="40%">样值:"这是推送内容" - String/JSONobject</td>
+			<td width="30%">&nbsp:&nbspMessage推送的内容</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└Type</td>
+			<td width="40%">样值:"type1" - String</td>
+			<td width="30%">&nbsp:&nbspMessage推送的内容的类型</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└xxxData</td>
+			<td width="40%">样值:"东京" - String</td>
+			<td width="30%">&nbsp:&nbspMessage推送的内容数据</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Day</td>
+			<td width="40%">样值:"2017-08-16" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(天)</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Time</td>
+			<td width="40%">样值:"14:14:45" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(小时)</td>
+		</tr>
+	</table>
+	
+	<br><a id="data8">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.SERVER_PUSH - 8<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Class</td>
+			<td width="40%">样值:"<a href="#push">见下文</a>" - String</td>
+			<td width="30%">&nbsp:&nbspMessage推送消息的类</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└*Value</td>
+			<td width="40%">样值:"这是推送内容" - String/JSONobject</td>
+			<td width="30%">&nbsp:&nbspMessage推送的内容</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└Type</td>
+			<td width="40%">样值:"type1" - String</td>
+			<td width="30%">&nbsp:&nbspMessage推送的内容的类型</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└xxxData</td>
+			<td width="40%">样值:"东京" - String</td>
+			<td width="30%">&nbsp:&nbspMessage推送的内容数据</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Day</td>
+			<td width="40%">样值:"2017-08-16" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(天)</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Time</td>
+			<td width="40%">样值:"14:14:45" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(小时)</td>
+		</tr>
+	</table>
+	
+	<br><a id="data9">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.EMPTY - 9<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+	</table>
+	
+	<br><a id="data10">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.ALTER_PROFILE - 10<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└NickName</td>
+			<td width="40%">样值:"西电小明" - String</td>
+			<td width="30%">&nbsp:&nbsp昵称</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Note</td>
+			<td width="40%">样值:"西电交友" - String</td>
+			<td width="30%">&nbsp:&nbsp个人说明</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Hobby</td>
+			<td width="40%">样值:"王者荣耀" - String</td>
+			<td width="30%">&nbsp:&nbsp兴趣</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Master</td>
+			<td width="40%">样值:"玩游戏" - String</td>
+			<td width="30%">&nbsp:&nbsp擅长</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Learning</td>
+			<td width="40%">样值:"JAVA" - String</td>
+			<td width="30%">&nbsp:&nbsp学习中</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Country</td>
+			<td width="40%">样值:"中国" - String</td>
+			<td width="30%">&nbsp:&nbsp国家</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Province</td>
+			<td width="40%">样值:"陕西" - String</td>
+			<td width="30%">&nbsp:&nbsp省份</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└City</td>
+			<td width="40%">样值:"汉中" - String</td>
+			<td width="30%">&nbsp:&nbsp城市</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Address</td>
+			<td width="40%">样值:"西安长安区116号" - String</td>
+			<td width="30%">&nbsp:&nbsp详细地址</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Adcode</td>
+			<td width="40%">样值:"351200" - String</td>
+			<td width="30%">&nbsp:&nbsp常驻地区</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└LocPrivacy</td>
+			<td width="40%">样值:"false" - String</td>
+			<td width="30%">&nbsp:&nbsp城市</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└School</td>
+			<td width="40%">样值:"西电" - String</td>
+			<td width="30%">&nbsp:&nbsp学校</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Organization</td>
+			<td width="40%">样值:"计算机学院" - String</td>
+			<td width="30%">&nbsp:&nbsp单位</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Education</td>
+			<td width="40%">样值:"本科" - String</td>
+			<td width="30%">&nbsp:&nbsp学历</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└JobPrivacy</td>
+			<td width="40%">样值:"false" - String</td>
+			<td width="30%">&nbsp:&nbsp身份隐私设定</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└RealName</td>
+			<td width="40%">样值:"小明" - String</td>
+			<td width="30%">&nbsp:&nbsp真实姓名</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Birth</td>
+			<td width="40%">样值:"1949-10-01" - String</td>
+			<td width="30%">&nbsp:&nbsp生日</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Phone</td>
+			<td width="40%">样值:"13799694622" - String</td>
+			<td width="30%">&nbsp:&nbsp手机</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Email</td>
+			<td width="40%">样值:"sina@163.com" - String</td>
+			<td width="30%">&nbsp:&nbsp邮箱</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Sex</td>
+			<td width="40%">样值:"保密" - String</td>
+			<td width="30%">&nbsp:&nbsp性别</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└IndiPrivacy</td>
+			<td width="40%">样值:"false" - String</td>
+			<td width="30%">&nbsp:&nbsp个人隐私设定</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└FirstLt</td>
+			<td width="40%">样值:"X" - String</td>
+			<td width="30%">&nbsp:&nbsp首字母</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└UpdataAvatar</td>
+			<td width="40%">样值:"false" - String</td>
+			<td width="30%">&nbsp:&nbsp是否更新头像</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└*Type</td>
+			<td width="40%">样值:".png" - String</td>
+			<td width="30%">&nbsp:&nbsp头像文件格式</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└*Value</td>
+			<td width="40%">样值:"xxxxx" - String</td>
+			<td width="30%">&nbsp:&nbsp头像文件数据</td>
+		</tr>
+	</table>
+	
+	<br><a id="data11">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.Message - 11<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Class</td>
+			<td width="40%">样值:"PIC|FILE|TXT" - String</td>
+			<td width="30%">&nbsp:&nbspMessage所发送内容的格式</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Type</td>
+			<td width="40%">样值:"my.jpg" - String</td>
+			<td width="30%">&nbsp:&nbspMessage文件的格式(文件名)</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Value</td>
+			<td width="40%">样值:"你比六环多一环" - String</td>
+			<td width="30%">&nbsp:&nbspMessage的内容</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Target</td>
+			<td width="40%">样值:"choychu" - String</td>
+			<td width="30%">&nbsp:&nbsp接受者的账号</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└City</td>
+			<td width="40%">样值:"西安" - String</td>
+			<td width="30%">&nbsp:&nbsp城市</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Stress</td>
+			<td width="40%">样值:"解放路" - String</td>
+			<td width="30%">&nbsp:&nbsp街道</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Address</td>
+			<td width="40%">样值:"解放路825街道" - String</td>
+			<td width="30%">&nbsp:&nbsp发送者的后台详细地理信息</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Day</td>
+			<td width="40%">样值:"2017-08-16" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(天)</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Time</td>
+			<td width="40%">样值:"14:14:45" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(小时)</td>
+		</tr>
+	</table>
+	
+	<br><a id="data12">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.CLIENT_POST_MOMENTS - 12<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Text</td>
+			<td width="40%">样值:"天气真好呀" - String</td>
+			<td width="30%">&nbsp:&nbsp发送的文本信息</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└UpLoadPicture(已废弃)</td>
+			<td width="40%">样值:"false" - String</td>
+			<td width="30%">&nbsp:&nbsp是否带有图片</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└PicNum</td>
+			<td width="40%">样值:"1" - String</td>
+			<td width="30%">&nbsp:&nbsp带有图片数目</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└*Type</td>
+			<td width="40%">样值:".png" - String</td>
+			<td width="30%">&nbsp:&nbsp图片文件格式</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp&nbsp&nbsp└*Value</td>
+			<td width="40%">样值:"xxxxx" - String</td>
+			<td width="30%">&nbsp:&nbsp图片文件数据</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Location</td>
+			<td width="40%">样值:"长安区116号" - String</td>
+			<td width="30%">&nbsp:&nbsp发送者所处位置</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Adcode</td>
+			<td width="40%">样值:"710126" - String</td>
+			<td width="30%">&nbsp:&nbsp发送者所处位置编号</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Privacy</td>
+			<td width="40%">样值:"false" - String</td>
+			<td width="30%">&nbsp:&nbsp该动态浏览权限</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└LikeNum</td>
+			<td width="40%">样值:"15" - String</td>
+			<td width="30%">&nbsp:&nbsp点赞数</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└CommentNum</td>
+			<td width="40%">样值:"55" - String</td>
+			<td width="30%">&nbsp:&nbsp留言数</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Day</td>
+			<td width="40%">样值:"2017-08-16" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(天)</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Time</td>
+			<td width="40%">样值:"14:14:45" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(小时)</td>
+		</tr>
+	</table>
+	
+	<br><a id="data13">
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>MsgType.CLIENT_POST_COMMENT - 13<b>&nbsp&nbsp<a href="#msgtype">返回消息类型</a></td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Target</td>
+			<td width="40%">样值:"13432" - String</td>
+			<td width="30%">&nbsp:&nbsp留言动态的编号</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Text</td>
+			<td width="40%">样值:"天气真好呀" - String</td>
+			<td width="30%">&nbsp:&nbsp发送的文本信息</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Location</td>
+			<td width="40%">样值:"长安区116号" - String</td>
+			<td width="30%">&nbsp:&nbsp发送者所处位置</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Adcode</td>
+			<td width="40%">样值:"710126" - String</td>
+			<td width="30%">&nbsp:&nbsp发送者所处位置编号</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Privacy</td>
+			<td width="40%">样值:"false" - String</td>
+			<td width="30%">&nbsp:&nbsp该评论浏览权限</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Day</td>
+			<td width="40%">样值:"2017-08-16" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(天)</td>
+		</tr>
+		<tr>
+			<td width="30%">&nbsp&nbsp└Time</td>
+			<td width="40%">样值:"14:14:45" - String</td>
+			<td width="30%">&nbsp:&nbsp发送时间(小时)</td>
+		</tr>
+	</table>
+	
+	<!--Push值表内容-->
+	<br>
+	<hr></hr>
+	<a id="push">
+	<h1>Push类型(PushType)</h1>
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>PushType</b>&nbsp&nbsp<a href="#data7">返回上一级</a></td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└Success</td>
+			<td width="15%">实值:1</td>
+			<td width="50%">&nbsp:&nbsp操作成功</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└Fail</td>
+			<td width="15%">实值:2</td>
+			<td width="50%">&nbsp:&nbsp操作失败</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└LoginSuccess</td>
+			<td width="15%">实值:3</td>
+			<td width="50%">&nbsp:&nbsp登陆成功</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└LoginFailed</td>
+			<td width="15%">实值:4</td>
+			<td width="50%">&nbsp:&nbsp登陆失败</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└RegisterSuccess</td>
+			<td width="15%">实值:5</td>
+			<td width="50%">&nbsp:&nbsp注册成功</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└RegisterFailed</td>
+			<td width="15%">实值:6</td>
+			<td width="50%">&nbsp:&nbsp注册失败</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└UpdataSuccess</td>
+			<td width="15%">实值:7</td>
+			<td width="50%">&nbsp:&nbsp更新成功</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└UpdataFailed</td>
+			<td width="15%">实值:8</td>
+			<td width="50%">&nbsp:&nbsp更新失败</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└ClientOffline</td>
+			<td width="15%">实值:9</td>
+			<td width="50%">&nbsp:&nbsp客户端下线</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└VersionUpdata</td>
+			<td width="15%">实值:10</td>
+			<td width="50%">&nbsp:&nbsp版本更新</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└FaceChecked</td>
+			<td width="15%">实值:11</td>
+			<td width="50%">&nbsp:&nbsp人脸识别确认</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└FileAccess</td>
+			<td width="15%">实值:12</td>
+			<td width="50%">&nbsp:&nbsp文件传输成功</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└FileFailed</td>
+			<td width="15%">实值:13</td>
+			<td width="50%">&nbsp:&nbsp文件传输失败</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└P2PAccess</td>
+			<td width="15%">实值:14</td>
+			<td width="50%">&nbsp:&nbspP2P建立成功</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└P2PFailed</td>
+			<td width="15%">实值:15</td>
+			<td width="50%">&nbsp:&nbspP2P建立失败</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└UpdataGeo</td>
+			<td width="15%">实值:16</td>
+			<td width="50%">&nbsp:&nbsp更新地理位置</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└ACK</td>
+			<td width="15%">实值:17</td>
+			<td width="50%">&nbsp:&nbspACK</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└ValicodeWrong</td>
+			<td width="15%">实值:18</td>
+			<td width="50%">&nbsp:&nbsp验证码错误</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└AvatarLost</td>
+			<td width="15%">实值:19</td>
+			<td width="50%">&nbsp:&nbsp头像更新失败</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└PicLost</td>
+			<td width="15%">实值:20</td>
+			<td width="50%">&nbsp:&nbsp图片上传失败</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└MomentLikedOrUnlike</td>
+			<td width="15%">实值:21</td>
+			<td width="50%">&nbsp:&nbsp客户端点赞</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└ResetPWSuccess</td>
+			<td width="15%">实值:22</td>
+			<td width="50%">&nbsp:&nbsp重设密码成功</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└ResetPWFailed</td>
+			<td width="15%">实值:23</td>
+			<td width="50%">&nbsp:&nbsp重设密码失败</td>
+		</tr>
+	</table>
+	
+	<!--Request内容-->
+	<br>
+	<hr></hr>
+	<a id="request">
+	<h1>请求类型(Request)</h1>
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>Request</b>&nbsp&nbsp<a href="#data4">返回上一级</a></td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└GetMomentsFriends</td>
+			<td width="15%">实值:1</td>
+			<td width="50%">&nbsp:&nbsp获取好友动态</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└GetMomentsNearby</td>
+			<td width="15%">实值:2</td>
+			<td width="50%">&nbsp:&nbsp获取附近动态</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└GetMomentsComment</td>
+			<td width="15%">实值:3</td>
+			<td width="50%">&nbsp:&nbsp获取指定动态评论</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└AddFriends</td>
+			<td width="15%">实值:4</td>
+			<td width="50%">&nbsp:&nbsp添加好友</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└RemoveFriends</td>
+			<td width="15%">实值:5</td>
+			<td width="50%">&nbsp:&nbsp移除好友</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└SearchFriendById</td>
+			<td width="15%">实值:6</td>
+			<td width="50%">&nbsp:&nbsp查找指定用户</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└SearchFriendNearby</td>
+			<td width="15%">实值:7</td>
+			<td width="50%">&nbsp:&nbsp查找附近用户</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└SearchFriendByNickname</td>
+			<td width="15%">实值:8</td>
+			<td width="50%">&nbsp:&nbsp查找指定昵称的用户</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└AddBlackList</td>
+			<td width="15%">实值:9</td>
+			<td width="50%">&nbsp:&nbsp添加黑名单</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└RemoveBlackList</td>
+			<td width="15%">实值:10</td>
+			<td width="50%">&nbsp:&nbsp移除黑名单</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└CheckProfile</td>
+			<td width="15%">实值:11</td>
+			<td width="50%">&nbsp:&nbsp查看个人详情资料</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└SendFile</td>
+			<td width="15%">实值:12</td>
+			<td width="50%">&nbsp:&nbsp文件传输请求</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└ResetPassword</td>
+			<td width="15%">实值:13</td>
+			<td width="50%">&nbsp:&nbsp更改密码</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└GetMomentsById</td>
+			<td width="15%">实值:14</td>
+			<td width="50%">&nbsp:&nbsp获取指定用户的所有动态</td>
+		</tr>
+	</table>
+	
+	<!--Response内容-->
+	<br>
+	<hr></hr>
+	<a id="response">
+	<h1>反馈类型(Response)</h1>
+	<table>
+		<tr>
+			<td width="100%" colspan="3"><b>Request</b>&nbsp&nbsp<a href="#data3">返回上一级</a></td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└AllowFile</td>
+			<td width="15%">实值:1</td>
+			<td width="50%">&nbsp:&nbsp接收文件</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└DenieFile</td>
+			<td width="15%">实值:2</td>
+			<td width="50%">&nbsp:&nbsp拒收文件</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└FileAccess</td>
+			<td width="15%">实值:3</td>
+			<td width="50%">&nbsp:&nbsp文件传输成功</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└FileFailed</td>
+			<td width="15%">实值:4</td>
+			<td width="50%">&nbsp:&nbsp文件传输失败</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└AcceptFriend</td>
+			<td width="15%">实值:5</td>
+			<td width="50%">&nbsp:&nbsp是否接受好友请求</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└ProfileResponse</td>
+			<td width="15%">实值:6</td>
+			<td width="50%">&nbsp:&nbsp个人资料数据回应</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└MomentResponse</td>
+			<td width="15%">实值:7</td>
+			<td width="50%">&nbsp:&nbsp动态数据回应</td>
+		</tr>
+		<tr>
+			<td width="35%">&nbsp&nbsp└CommentResponse</td>
+			<td width="15%">实值:8</td>
+			<td width="50%">&nbsp:&nbsp评论数据回应</td>
+		</tr>
+		
+		
+	</table>
+	
+	</body>
+	<!--Created by Dai @Xidian On 2017/6/2 Version:2.0-->
+	<!--Updated by Dai @Xidian On 2017/6/3 Version:2.1-->
+	<!--Updated by Dai @Xidian On 2017/6/4 Version:2.2-->
+	<!--Updated by Dai @Xidian On 2017/6/14 Version:2.3-->
+</html>
+
+
